@@ -24,17 +24,23 @@ router.get("/signup", function(req, res){
 })
 
 router.post("/signup", function(req, res){
-	User.register(new User({username: req.body.username}), req.body.password, function(err, user){
-		if(err){
-			console.log(err)
-			req.flash("error", err.message)
-			return res.redirect("/signup")
-		}
-		passport.authenticate("local")(req, res, function(){
-			req.flash("success", "Great Job, you sign up successfully.")
-			res.redirect("/campgrounds")
+	if(req.body.password == req.body.password2){
+		User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+			if(err){
+				console.log(err)
+				req.flash("error", err.message)
+				return res.redirect("/signup")
+			}
+			passport.authenticate("local")(req, res, function(){
+				req.flash("success", "Great Job, you sign up successfully.")
+				res.redirect("/campgrounds")
+			})
 		})
-	})
+	}else {
+		req.flash("error", err.message)
+		return res.redirect("/signup")
+	}
+	
 })
 
 router.get("/logout", function(req, res){

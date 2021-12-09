@@ -57,6 +57,6 @@ app.use("/campgrounds", campRouter)
 app.use("/campgrounds/:id/comments", commentRouter)
 
 
-app.listen(3030, function(req, res){
+app.listen(3333, function(req, res){
 	console.log("YelpCamp server is connected!");
 });
