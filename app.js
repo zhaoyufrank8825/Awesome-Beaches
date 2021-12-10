@@ -24,7 +24,7 @@ var indexRouter = require("./routers/index"),
 //   useCreateIndex: true
 // });
 
-mongoose.connect('mongodb+srv://zhaoyufrank8825:yingying8825@cluster0.x1tdu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect("mongodb+srv://zhaoyufrank8825:yingying8825@cluster0.x1tdu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
