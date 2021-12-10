@@ -17,7 +17,14 @@ var indexRouter = require("./routers/index"),
 	commentRouter = require("./routers/comments")
 
 
-mongoose.connect('mongodb://localhost/yelpcamp', {
+// mongoose.connect('mongodb://localhost/yelpcamp', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false,
+//   useCreateIndex: true
+// });
+
+mongoose.connect('mongodb+srv://zhaoyufrank8825:yingying8825@cluster0.x1tdu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
@@ -58,5 +65,5 @@ app.use("/campgrounds/:id/comments", commentRouter)
 
 
 app.listen(3333, function(req, res){
-	console.log("YelpCamp server is connected!");
+	console.log("Beach server is connected!");
 });

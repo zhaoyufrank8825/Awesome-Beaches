@@ -3,7 +3,7 @@
 
 	<div class="jumbotron">
 		<h1>
-			Welcome to the AwesomeBeach
+			Welcome to the Awesome Beaches
 		</h1>
 		<p>
 			view our hand picked awesome beaches from all over the world
@@ -19,7 +19,7 @@
 		<% campgrounds.forEach(function(camp){ %>
 		<div class="col col-lg-4 col-md-6 col-12" style="margin-bottom: 20px">
 			<div class="card" >
-			  <img class="card-img-top" src="<%= camp.img %>">
+				<a href="/campgrounds/<%= camp._id %>"> <img class="card-img-top" src="<%= camp.img %>"> </a>
 			  <div class="card-body">
 				<h5 class="card-title"><%= camp.name %></h5>
 				<p class="card-text"><%= camp.desc.substring(0, 50) %>...</p>
